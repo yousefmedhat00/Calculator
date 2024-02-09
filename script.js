@@ -23,7 +23,9 @@ number.forEach(function(number) {
 operatorBtn.forEach(function(operatorBtn) {
     operatorBtn.addEventListener("click", () => {
         const clickedOperator = operatorBtn.textContent;
-        if(operator.textContent == "") {
+        if(value1.textContent == ""){
+            alert("ERROR! \n Insert Value first!");
+        } else if(operator.textContent == "") {
             operator.textContent = operatorBtn.textContent;
         } else if (value2.textContent == "" && !operator.textContent == "") {
             operator.textContent = operatorBtn.textContent;
@@ -48,5 +50,7 @@ function operate(a, b) {
         return a/b;
     };
 };
+
+
 
 
