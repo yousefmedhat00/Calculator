@@ -1,7 +1,7 @@
 body {
 width: 100vw;
 height: 100vh;
-background-color: #2B4162;
+background-color: #1e2d45;
 }
 
 .main {
@@ -13,22 +13,27 @@ background-color: #2B4162;
 }
 
 .container {
-    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 15px;
+    border: 1px solid #385F71;
+    border-radius: 10px;
+    
 }
 
 .row {
     display: flex;
-
 }
 
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 80px;
     width: 80px;
     cursor: pointer;
-    background-color: #2B4162;
+    background-color: #1e2d45;
     margin: 5px;
     border: 1px solid #385F71;
     border-radius: 5px;
@@ -38,6 +43,10 @@ button {
 
 .screen {
     border: 1px solid #385F71;
+    border-radius: 5px;
+    width: 350px;
+    height: 80px;
+    margin: 5px;
 }
 
 .number-btn {
@@ -45,5 +54,13 @@ button {
 }
 
 .operator-btn {
-    color: #F487B6;
+    color: #b187f4;
+}
+
+.system-btn {
+    color: #c9695c;
+}
+
+#zero-btn {
+    flex-grow: 2;
 }
