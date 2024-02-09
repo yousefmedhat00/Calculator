@@ -11,13 +11,42 @@ const operatorBtn = document.querySelectorAll(".operator-btn");
 
 number.forEach(function(number) {
     number.addEventListener("click", () => {
-        value1.textContent = number.textContent;
+        const clickedBtn = parseFloat(number.textContent);
+        if(operator.textContent == "") {
+            value1.textContent += clickedBtn;
+        } else {
+            value2.textContent += clickedBtn;
+        }
     });
 });
 
 operatorBtn.forEach(function(operatorBtn) {
     operatorBtn.addEventListener("click", () => {
-        operator.textContent = operatorBtn.textContent;
+        const clickedOperator = operatorBtn.textContent;
+        if(operator.textContent == "") {
+            operator.textContent = operatorBtn.textContent;
+        } else if (value2.textContent == "" && !operator.textContent == "") {
+            operator.textContent = operatorBtn.textContent;
+        } else {
+            const firstValue = parseFloat(value1.textContent);
+            const secondValue = parseFloat(value2.textContent);
+            value1.textContent = operate(firstValue, secondValue);
+            value2.textContent = "";
+            operator.textContent = operatorBtn.textContent;
+        }    
     });
 });
+
+function operate(a, b) {
+    if (operator.textContent == '+') {
+        return a + b;
+    } else if (operator.textContent == '-') {
+        return a - b;
+    } else if (operator.textContent == '*') {
+        return a * b;
+    } else {
+        return a/b;
+    };
+};
+
 
