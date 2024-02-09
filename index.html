@@ -10,12 +10,16 @@
     <div class="main">
         <div class="container">
             <div class="screen">
-
+                <div class="screen-inside">
+                    <span id="operand1"></span>
+                    <span id="operator"></span>
+                    <span id="operand2"></span>
+                </div>
             </div>
             <div class="row">
-                <button class="system-btn">AC</button>
-                <button class="system-btn">DEL</button>
-                <button class="system-btn">+/-</button>
+                <button class="system-btn" id="ac-btn">AC</button>
+                <button class="system-btn" id="del-btn">DEL</button>
+                <button class="system-btn" id="sign-btn">+/-</button>
                 <button class="operator-btn">+</button>
             </div>
             <div class="row">
@@ -37,9 +41,9 @@
                 <button class="operator-btn">÷</button>
             </div>
             <div class="row">
-                <button class="number-btn">0</button>
+                <button class="number-btn" id="zero-btn">0</button>
                 <button class="number-btn">.</button>
-                <button class="operator-btn">=</button>
+                <button class="equal">=</button>
             </div>
         </div>
     </div>
