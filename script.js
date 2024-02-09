@@ -48,7 +48,12 @@ function operate(a, b) {
     } else if (operator.textContent == '*') {
         return a * b;
     } else {
-        return a/b;
+        if(b == 0) {
+            alert("You can't really divide by zero, you should know that.")
+            value2.textContent = "";
+        } else {
+            return a/b;
+        };
     };
 };
 
@@ -64,5 +69,19 @@ equalBtn.addEventListener("click", () => {
     value1.textContent = parseFloat(operate(firstValue, secondValue).toFixed(3));
     value2.textContent = "";
     operator.textContent = "";
+});
+
+deleteBtn.addEventListener("click", () => {
+    if (!value2.textContent == "") {
+        newArray = value2.textContent.split("");
+        newArray.pop();
+        value2.textContent = newArray.join("");
+    } else if (!operator.textContent == "") {
+        operator.textContent = "";
+    } else {
+        newArray = value1.textContent.split("");
+        newArray.pop();
+        value1.textContent = newArray.join("");
+    }
 });
     
