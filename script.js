@@ -2,6 +2,7 @@ const clearBtn = document.querySelector("#ac-btn");
 const deleteBtn = document.querySelector("#del-btn");
 const signBtn = document.querySelector("#sign-btn");
 const equalBtn = document.querySelector(".equal-btn")
+const decimalBtn = document.querySelector(".decimal-btn");
 
 const value1 = document.querySelector("#operand1");
 const value2 = document.querySelector("#operand2");
@@ -82,6 +83,26 @@ deleteBtn.addEventListener("click", () => {
         newArray = value1.textContent.split("");
         newArray.pop();
         value1.textContent = newArray.join("");
+    }
+});
+
+signBtn.addEventListener("click", () => {
+    if (!value2.textContent == "" && !value2.textContent.includes("-")) {
+        value2.textContent = "-" + value2.textContent;
+    } else if (!value2.textContent == "" && value2.textContent.includes("-")) {
+        value2.textContent = value2.textContent.replace("-", "");
+    } else if (!value1.textContent == "" && !value1.textContent.includes("-") && operator.textContent == "" ) {
+        value1.textContent = "-" + value1.textContent;
+    } else if (!value1.textContent == "" && value1.textContent.includes("-") && operator.textContent == "") {
+        value1.textContent = value1.textContent.replace("-", "");
+    }
+});
+
+decimalBtn.addEventListener("click", () => {
+    if (!value2.textContent == "" && !value2.textContent.includes(".")) {
+        value2.textContent += ".";
+    } else if (!value1.textContent == "" && !value1.textContent.includes(".") && operator.textContent == "") {
+        value1.textContent += ".";
     }
 });
     
