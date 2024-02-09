@@ -64,6 +64,7 @@ button {
     color: whitesmoke;
     font-size: 32px;
     text-shadow: 2px 2px 5px #20003d9e;
+    margin-left: auto;
 }
 
 .number-btn, .decimal-btn {
@@ -84,6 +85,7 @@ button {
 
 button:hover {
     transform: translateY(2px);
+    background-color: rgb(35, 53, 82);
     border-bottom: 2px solid #385F71;
     box-shadow: 0 0 0 0;
 }
