@@ -32,7 +32,7 @@ operatorBtn.forEach(function(operatorBtn) {
         } else {
             const firstValue = parseFloat(value1.textContent);
             const secondValue = parseFloat(value2.textContent);
-            value1.textContent = operate(firstValue, secondValue);
+            value1.textContent = operate(firstValue, secondValue).toFixed(5);
             value2.textContent = "";
             operator.textContent = operatorBtn.textContent;
         }    
@@ -51,6 +51,10 @@ function operate(a, b) {
     };
 };
 
-
+clearBtn.addEventListener("click", () => {
+    value1.textContent = "";
+    value2.textContent = "";
+    operator.textContent = "";
+});
 
 
